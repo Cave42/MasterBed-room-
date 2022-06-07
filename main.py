@@ -1,5 +1,5 @@
-import pandas
 import pandas as pd
+import numpy as np
 
 nCovBed = "C:/Users/cave42/PycharmProjects/bedToMaster/Files/nCoV-2019.bed"
 nCovInsertBed = "C:/Users/cave42/PycharmProjects/bedToMaster/Files/nCoV-2019.insert.bed"
@@ -82,4 +82,7 @@ with open(nCovTsv) as file3:
 
         lineCount = lineCount + 1
 
-print(df.to_string())
+#print(df.to_string())
+
+numpy_array = df.to_numpy()
+np.savetxt("Masterfile.txt", numpy_array, fmt='%s')
